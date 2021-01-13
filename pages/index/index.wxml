@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<view class="container">
+<view class="search-bar">
+  <view class="greet-user">
+  <view class="h2-light remove-margin-bottom">Hello,</view>
+  <view class="h2-bold">Ashkan</view>
+  </view>
+  <view class="search-button">
+    <image class="search-icon" src="/images/search.svg"></image>
+  </view>
+</view>
+  <view class="dashboard">
+    <view class="dashboard-content">
+      <view class="dashboard-desc">
+      This month's reimbursement:
+      </view>
+      <view class="dashboard-number">
+        15.234,10 RMB
+      </view>
+    </view>
+    <view class="dashboard-stats">
+      <view class="bar">
+        <view class="bar-unselect">
+        </view>
+        <view class="bar-text">
+          Dec
+        </view>
+      </view>
+      <view class="bar">
+        <view class="bar-unselect-light">
+        </view>
+        <view class="bar-text">
+          Jan
+        </view>
+      </view>
+      <view class="bar">
+        <view class="bar-unselect">
+        </view>
+        <view class="bar-text">
+          Feb
+        </view>
+      </view>
+      <view class="bar">
+        <view class="bar-unselect bar-selected">
+        </view>
+        <view class="bar-text">
+          Mar
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
