@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+<!-- Search & Greet -->
 <view class="search-bar">
   <view class="greet-user">
   <view class="h2-light remove-margin-bottom">Hello,</view>
@@ -9,6 +10,7 @@
     <image class="search-icon" src="/images/search.svg"></image>
   </view>
 </view>
+<!-- Dashboard -->
   <view class="dashboard">
     <view class="dashboard-content">
       <view class="dashboard-desc">
@@ -49,4 +51,61 @@
       </view>
     </view>
   </view>
+<!-- My Projects -->
+<view class="projects">
+  <view class="h2-bold">
+    My Projects
+  </view>
+  <view wx:if="{{projects}}" class="project-items-empty">
+    You don't have any projects
+  </view>
+
+  <view wx:else class="project-items-full">
+    <view class="project-card">
+      <view class="project-description">
+        <view class="project-h2">KWV Research</view>
+        <view class="project-p">Research Paper</view>
+      </view>
+      <view class="project-p">
+        RMB 15.291
+      </view>
+      <image class="project-btn" src="/images/project-btn.svg"></image>
+    </view>
+  </view>
+
+</view>
+
+<!-- This Week's Expenses -->
+<view class="expenses">
+  <view class="h2-bold">
+    This week
+  </view>
+  <view wx:if="{{!expenses}}" class="expense-items-empty">
+    You don't have any projects
+  </view>
+
+  <view wx:else class="expense-items-full">
+    <view wx:for="{{ expenses }}" wx:for-item="expense">
+      <view class="expense-item">
+        <view class="expense-icon">
+          <image src="/images/taxi.svg"></image>
+        </view>
+        <view class="expense-description">
+          <view class="expense-title"> Taxi Ride </view>
+          <view class="expense-subtitle"> {{ expense.description }} - 23 May, 2018 </view>
+        </view>
+        <view class="expense-details">
+          <view class="expense-status">
+            {{ expense.approved ? 'Approved' : 'Pending'}}
+          </view>
+          <view class="expense-amount">
+            - 25.00 RMB
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<tabBar></tabBar>
+
 </view>
