@@ -9,8 +9,49 @@ Page({
     step: 1,
 
   },
-  checkBox: function(event) {
-    console.log(event.detail.value)
+  checkBox: function() {
+    if (this.data.reimbursement) {
+      this.setData({reimbursement: false})
+    } else {
+      this.setData({reimbursement: true})
+    }
+  },
+
+  goToHome: function() {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
+
+  goToStep2: function(e) {
+    console.log(e)
+    this.setData({step: 2})
+  },
+
+  goToStep1: function() {
+    this.setData({step: 1})
+  },
+
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
+
+  uploadPhoto: function(){
+    let page = this
+    wx.chooseImage({
+      count: 1,
+      success(res){
+        console.log(res)
+        const photo = res.tempFilePaths[0]
+        console.log(photo)
+        page.setData({fapiao: photo})
+
+      }
+    })
+
   },
 
   /**

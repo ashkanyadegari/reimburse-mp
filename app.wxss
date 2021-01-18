@@ -12,6 +12,10 @@
   color: #F2AB94;
 }
 
+.font-white {
+  color: white;
+}
+
 
 /* Fonts */
 
@@ -39,3 +43,43 @@
   font-weight: bold;
 }
 
+.btn {
+  padding: 15rpx 40rpx;
+  border-radius: 15rpx;
+}
+
+.btn-primary {
+  background-color: #422349;
+  color: white;
+}
+
+.btn-grey {
+  background-color: #8b8b8b;
+  color: white;
+}
+
+/* forms */
+
+.input {
+  border-radius: 15rpx;
+  border: 1px solid #E0E0E0;
+  padding: 15rpx 20rpx;
+}
+
+.mt-2 {
+  margin-top: 20rpx;
+}
+
+.mb-2 {
+  margin-bottom: 20rpx;
+}
+
+/* report & projects */
+.report{
+  height: 200rpx;
+  border: 2px dashed #422349;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
