@@ -1,1 +1,57 @@
 /* pages/create/create.wxss */
+
+/* Categories */
+.categories {
+}
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50rpx;
+}
+
+.category-card {
+  flex: 0 1 100rpx;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 250rpx;
+  height: 350rpx;
+  background-color: #FFFEF5;
+  box-shadow: 0 0 15rpx rgba(50,50,50,0.1);
+  margin: 20rpx 25rpx;
+  border-radius: 15rpx;
+}
+
+.category-card-selected {
+  background-color: #422349;
+  color: white;
+  flex: 0 1 100rpx;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 250rpx;
+  height: 350rpx;
+  /* background-color: #FFFEF5; */
+  box-shadow: 0 0 15rpx rgba(50,50,50,0.1);
+  margin: 20rpx 25rpx;
+  border-radius: 15rpx;
+  transition-delay: 700ms ease-in;
+}
+
+/* Details Page */
+
+.fapiao-upload {
+  margin-top: 20rpx;
+  background-color: #422349;
+  border-radius: 20rpx;
+  height: 350rpx;
+}
+
+.fap-img {
+  width: 60rpx;
+}

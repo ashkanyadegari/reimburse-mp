@@ -1,2 +1,37 @@
 <!--pages/create/create.wxml-->
-<text>pages/create/create.wxml</text>
+<view class="container">
+  <view wx:if="{{step !== 1}}">
+    <view class="font-large-bold font-primary">Add Expense</view>
+      <view class="font-md-light font-primary">Step 1: Choose Category</view>
+      <view class="parent">
+        <view class="categories" wx:for="{{categories}}" wx:for-item="category">
+          <view class="{{category.id === categoryId ? 'category-card-selected' : 'category-card'}}" data-id="{{category.id}}" bindtap="clickCategory">
+            <view>
+              <view class="category-icon">Icon</view>
+              <view class="font-sm-bold font-secondary">{{category.description}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>
+        <checkbox id="reimburse" bindtap="checkBox" value="true">Expense is a reimbursement</checkbox>
+        <!-- <label for="reimburse">Expense is a reimbursement</label> -->
+      </view>
+  </view>
+
+
+  <view wx:else>
+    <view class="font-large-bold font-primary">Add Expense</view>
+    <view class="font-md-light font-primary">Step 2: Details</view>
+    <view class="fapiao-upload">
+      <view class="fap-content">
+        <image class="fap-img" src="/images/upload.svg"></image>
+        <view>
+          Upload your fapiao optional
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

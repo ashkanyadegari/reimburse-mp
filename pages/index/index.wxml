@@ -6,7 +6,7 @@
   <view class="h2-light remove-margin-bottom">Hello,</view>
   <view class="h2-bold">Ashkan</view>
   </view>
-  <view class="search-button">
+  <view bindtap="scanFapiao" class="search-button">
     <image class="search-icon" src="/images/search.svg"></image>
   </view>
 </view>
@@ -56,23 +56,40 @@
   <view class="h2-bold">
     My Projects
   </view>
-  <view wx:if="{{projects}}" class="project-items-empty">
+  <view wx:if="{{!projects}}" class="project-items-empty">
     You don't have any projects
   </view>
-
-  <view wx:else class="project-items-full">
-    <view class="project-card">
+<!-- <view wx:else>
+  <view wx:for="{{projects}}" wx:for-item="project" class="project-items-full">
+    <view class="project-card" data-id="{{project.id}}">
       <view class="project-description">
-        <view class="project-h2">KWV Research</view>
-        <view class="project-p">Research Paper</view>
+        <view class="project-h2">{{project.title}}</view>
+        <view class="project-p short-text">{{project.description}}</view>
       </view>
       <view class="project-p">
-        RMB 15.291
+        RMB {{project.budget}}
       </view>
       <image class="project-btn" src="/images/project-btn.svg"></image>
     </view>
   </view>
+</view> -->
 
+<view wx:else>
+  <swiper class="project-items-full">
+    <swiper-item wx:for="{{projects}}" wx:for-item="project" style="margin-right: 10px">
+      <view class="project-card" data-id="{{project.id}}">
+        <view class="project-description">
+          <view class="project-h2">{{project.title}}</view>
+          <view class="project-p short-text">{{project.description}}</view>
+        </view>
+        <view class="project-p">
+          RMB {{project.budget}}
+        </view>
+        <image class="project-btn" src="/images/project-btn.svg"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
 </view>
 
 <!-- This Week's Expenses -->

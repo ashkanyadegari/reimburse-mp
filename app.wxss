@@ -3,3 +3,39 @@
   height: 100%;
   padding: 20rpx 20rpx;
 } 
+
+/* color */
+.font-primary {
+  color: #422349;
+}
+.font-secondary {
+  color: #F2AB94;
+}
+
+
+/* Fonts */
+
+.font-large-light {
+  font-size: 64rpx;
+  font-weight: lighter;
+}
+.font-md-light {
+  font-size: 48rpx;
+  font-weight: lighter;
+}
+
+.font-large-bold {
+  font-size: 56rpx;
+  font-weight: bolder;
+}
+
+.font-md-bold {
+  font-size: 48rpx;
+  font-weight: bolder;
+}
+
+.font-sm-bold {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+

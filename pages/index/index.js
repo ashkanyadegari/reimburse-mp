@@ -24,6 +24,15 @@ Page({
         let data = res.data
         page.setData({expenses: data})
       }
+    }),
+    wx.request({
+      url: app.globalData.localhost + 'projects',
+      data: {user_id: 1},
+      success(res) {
+        console.log(res)
+        let data = res.data
+        page.setData({projects: data})
+      }
     })
   },
 
@@ -32,6 +41,15 @@ Page({
    */
   onReady: function () {
 
+  },
+
+  scanFapiao: function () {
+    wx.scanCode({
+      onlyFromCamera: true,
+      success(res) {
+        console.log(res)
+      }
+    })
   },
 
   /**

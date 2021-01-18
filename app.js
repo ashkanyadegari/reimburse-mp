@@ -9,6 +9,18 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res)
+        wx.request({
+          url: 'http://localhost:3000/login',
+          method: 'post',
+          data: {
+            code: res.code
+          },
+          success: (res) => {
+            console.log(res)
+            this.globalData.userId = res.data.userId
+          }
+        })
       }
     })
     // 获取用户信息

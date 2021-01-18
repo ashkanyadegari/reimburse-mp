@@ -135,6 +135,13 @@
   color: #ffff;
 }
 
+.short-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 410rpx;
+}
+
 .project-btn {
   width: 50rpx;
   height: 50rpx;

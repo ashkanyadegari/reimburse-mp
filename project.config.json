@@ -64,6 +64,12 @@
         {
           "name": "profile",
           "pathName": "pages/profile/profile",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "create",
+          "pathName": "pages/create/create",
           "scene": null
         }
       ]
