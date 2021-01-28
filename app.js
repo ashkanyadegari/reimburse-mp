@@ -18,7 +18,7 @@ App({
           },
           success: (res) => {
             console.log(res)
-            this.globalData.userId = res.data.userId
+            this.globalData.user = res.data.user
           }
         })
       }

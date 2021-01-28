@@ -49,13 +49,13 @@
 }
 
 .btn-primary {
-  background-color: #422349;
+  background-color: #8F6799;
   color: white;
 }
 
 .btn-grey {
-  background-color: #8b8b8b;
-  color: white;
+  background-color: #E5E5E5;
+  color: #818181;
 }
 
 /* forms */
@@ -82,4 +82,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.plus-button {
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #A787AF;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }

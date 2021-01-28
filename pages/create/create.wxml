@@ -19,7 +19,7 @@
       </view>
       <view class="buttons">
         <navigator class="btn btn-grey" bindtap="goToHome">Cancel</navigator>
-        <navigator wx:if="{{!categoryId}}" class="btn btn-primary "bindtap="goToStep2">Next</navigator>
+        <navigator wx:if="{{categoryId}}" class="btn btn-primary "bindtap="goToStep2">Next</navigator>
       </view>
   </view>
 
@@ -27,7 +27,7 @@
   <view wx:else>
     <view class="font-large-bold font-primary">Add Expense</view>
     <view class="font-md-light font-primary">Step 2: Details</view>
-    <form action="">
+    <form bindsubmit="formSubmit">
       <view bindtap="uploadPhoto" class="fapiao-upload" style="background-image: url({{fapiao}}); background-position: center; background-size: contain">
         <view class="fap-content">
           <image class="fap-img" src="/images/upload.svg"></image>
@@ -50,26 +50,36 @@
       <view class="input-field">
         <view class="font-primary font-sm-bold mt-2 mb-2">Expense Date</view>
         <picker mode="date" value="{{date}}" start="2020-01-01" end="2021-12-31" bindchange="bindDateChange">
-          <input class="input mt-2 mb-2" placeholder="Pick a date" type="text" name="amount" value="{{date}}" id=""/>
+          <input class="input mt-2 mb-2" placeholder="Pick a date" type="text" name="date" value="{{date}}" id=""/>
         </picker>
       </view>
 
-      <view class="input-field" wx:if="{{reimbursement === true}}">
+      <view class="input-field" wx:if="{{reimbursement === false}}">
         <view class="font-primary font-sm-bold mt-2 mb-2">Bank Account</view>
         <input class="input mt-2 mb-2" placeholder="Expense description..." type="text" name="bank-account" id=""/>
       </view>
       <view class="input-field">
-        <view class="font-primary font-sm-bold mt-2 mb-2">Choose Report:</view>
+        <view class="font-primary font-sm-bold mt-2 mb-2">Choose Report(Optional):</view>
         <view class="report">
-          <view class="plusButton">
-
+          <view class="plus-button">
+            +
           </view>
         </view>
       </view>
 
+      <view class="input-field">
+        <view class="font-primary font-sm-bold mt-2 mb-2">Choose Project (Optional):</view>
+        <view class="report">
+          <view class="plus-button">
+            +
+          </view>
+        </view>
+      </view>
+      <checkbox class="font-sm-bold font-primary mt-2 mb-2" id="fapiao" bindtap="hasFapiao" name="hasFapiao">Has fapiao</checkbox>
       <view class="buttons">
         <navigator class="btn btn-grey" bindtap="goToStep1" src="">Go Back</navigator>
-      <navigator class="btn btn-primary" bindtap="submitForm" src="">Submit Expense</navigator>
+      <!-- <navigator class="btn btn-primary" form-type="submit" src="">Submit Expense</navigator> -->
+        <button style="margin-left: none; margin-right: none;" class="btn btn-primary" form-type="submit">Submit</button>
       </view>
     </form>
 

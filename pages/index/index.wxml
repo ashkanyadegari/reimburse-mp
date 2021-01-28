@@ -95,28 +95,28 @@
 <!-- This Week's Expenses -->
 <view class="expenses">
   <view class="h2-bold">
-    This week
+    Spending Overview
   </view>
   <view wx:if="{{!expenses}}" class="expense-items-empty">
-    You don't have any projects
+    You don't have any expenses
   </view>
 
   <view wx:else class="expense-items-full">
     <view wx:for="{{ expenses }}" wx:for-item="expense">
-      <view class="expense-item">
+      <view class="expense-item" data-id="{{expense.id}}" bindtap="goToExpense">
         <view class="expense-icon">
           <image src="/images/taxi.svg"></image>
         </view>
         <view class="expense-description">
-          <view class="expense-title"> Taxi Ride </view>
-          <view class="expense-subtitle"> {{ expense.description }} - 23 May, 2018 </view>
+          <view class="expense-title"> {{expense.category}} </view>
+          <view class="expense-subtitle"> {{ expense.description }} - {{expense.expense_date}} </view>
         </view>
         <view class="expense-details">
           <view class="expense-status">
             {{ expense.approved ? 'Approved' : 'Pending'}}
           </view>
           <view class="expense-amount">
-            - 25.00 RMB
+            - {{expense.amount}} RMB
           </view>
         </view>
       </view>

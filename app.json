@@ -6,7 +6,8 @@
     "pages/profile/profile",
     "pages/project/project",
     "pages/report/report",
-    "pages/new/new"
+    "pages/new/new",
+    "pages/expense/expense"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,2 +1,29 @@
 <!--pages/new/new.wxml-->
-<text>pages/new/new.wxml</text>
+<view class="container">
+  <view class="font-large-bold font-primary">Reports</view>
+  <view class="font-md-light font-primary">Create a Report</view>
+      <view class="input-field">
+        <view class="font-primary font-sm-bold mt-2 mb-2">Title</view>
+        <input class="input mt-2 mb-2" placeholder="Expense description..." type="text" name="title" id=""/>
+      </view>
+      <view class="input-field">
+        <view class="font-primary font-sm-bold mt-2 mb-2">Description</view>
+        <textarea class="input mt-2 mb-2" placeholder="Expense description..." type="text" name="description" id=""/>
+      </view>
+
+      <view class="input-field">
+        <view class="font-primary font-sm-bold mt-2 mb-2">Expense Date</view>
+        <picker mode="date" value="{{date}}" start="2020-01-01" end="2021-12-31" bindchange="bindDateChange">
+          <input class="input mt-2 mb-2" placeholder="Pick a date" type="text" name="date" value="{{date}}" id=""/>
+        </picker>
+      </view>
+
+      <view class="input-field">
+        <view class="font-primary font-sm-bold mt-2 mb-2">Expense Date</view>
+        <picker mode="date" value="{{date}}" start="2020-01-01" end="2021-12-31" bindchange="bindDateChange">
+          <input class="input mt-2 mb-2" placeholder="Pick a date" type="text" name="date" value="{{date}}" id=""/>
+        </picker>
+      </view>
+
+
+</view>

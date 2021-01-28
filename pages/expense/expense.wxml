@@ -1,0 +1,9 @@
+<!--pages/expense/expense.wxml-->
+<view class="container">
+  <view class="expense-head" bindtap="{{viewImage}}" style="background-image: url({{expense.photos}}); background-position: center; background-size: contain" data-src="{{expense.photos}}">
+
+  </view>
+  <view class="font-large-bold font-primary">{{expense.description}}</view>
+  <view class="font-primary font-md-light">{{expense.expense_date}}</view>
+  <view class="font-primary font-large-bold">RMB {{expense.amount}}</view>
+</view>

@@ -1,0 +1,6 @@
+/* pages/expense/expense.wxss */
+
+.expense-head {
+  height: 350rpx;
+  border-radius: 20rpx;
+}

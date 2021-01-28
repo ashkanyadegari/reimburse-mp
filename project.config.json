@@ -70,6 +70,13 @@
         {
           "name": "create",
           "pathName": "pages/create/create",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "newreport",
+          "pathName": "pages/new/new",
+          "query": "",
           "scene": null
         }
       ]

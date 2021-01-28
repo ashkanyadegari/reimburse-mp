@@ -18,7 +18,7 @@ Page({
     let page = this
     wx.request({
       url: app.globalData.localhost + 'expenses',
-      data: {user_id: 1},
+      data: {user_id: app.globalData.user.id},
       success(res) {
         console.log(res)
         let data = res.data
@@ -40,7 +40,25 @@ Page({
    * Lifecycle function--Called when page is initially rendered
    */
   onReady: function () {
-
+    let page = this
+    wx.request({
+      url: app.globalData.localhost + 'expenses',
+      data: {user_id: 18},
+      success(res) {
+        console.log(res)
+        let data = res.data
+        page.setData({expenses: data})
+      }
+    }),
+    wx.request({
+      url: app.globalData.localhost + 'projects',
+      data: {user_id: 1},
+      success(res) {
+        console.log(res)
+        let data = res.data
+        page.setData({projects: data})
+      }
+    })
   },
 
   scanFapiao: function () {
@@ -49,6 +67,14 @@ Page({
       success(res) {
         console.log(res)
       }
+    })
+  },
+
+  goToExpense: function(event){
+    console.log(event)
+    const id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/expense/expense?id=${id}`,
     })
   },
 

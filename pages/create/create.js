@@ -7,13 +7,61 @@ Page({
    */
   data: {
     step: 1,
+    reimbursement: false,
 
   },
+
+  formSubmit: function(e) {
+    console.log('form triggers a submit event, carrying the following data: ', e.detail.value)
+    const formData = e.detail.value
+    let page = this
+    const params = {
+      description: formData.description,
+      category_id: this.data.categoryId,
+      user_id: app.globalData.user.id,
+      reimbursement: this.data.reimbursement,
+      amount: formData.amount,
+      expense_date: formData.date
+    }
+    wx.request({
+      url: app.globalData.localhost + 'expenses',
+      method: 'POST',
+      data: params,
+      success(res) {
+        console.log(res)
+        const id = res.data.expense.id
+        if (page.data.fapiao) {
+          console.log('test',page.data.fapiao)
+          wx.uploadFile({
+            filePath: page.data.fapiao,
+            formData: {id: id},
+            name: 'fapiao',
+            url: app.globalData.localhost + 'fapiao',
+            success(res) {
+              console.log(res)
+            }
+          })
+        }
+        wx.reLaunch({
+          url: '/pages/index/index',
+        })
+      }
+    })
+  },
+
   checkBox: function() {
     if (this.data.reimbursement) {
       this.setData({reimbursement: false})
     } else {
       this.setData({reimbursement: true})
+    }
+  },
+
+  hasFapiao: function() {
+    if (this.data.hasFapiao) {
+      this.setData({hasFapiao: false})
+    } else {
+      this.setData({hasFapiao: true})
     }
   },
 
